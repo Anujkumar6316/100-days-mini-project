@@ -1,8 +1,9 @@
 # 100-days-mini-project
 100 days mini project
+
 Beginner Level:
 
-    Simple Notes Making App
+    Simple Notes Making App 
     Quiz App
     Blog (beginner level)
     Simple Register and Login System
