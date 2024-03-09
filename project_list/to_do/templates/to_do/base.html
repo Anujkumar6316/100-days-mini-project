@@ -14,9 +14,9 @@
 
 <body>
     <header class="fflex ">
-        <a href="#" class="bbrand-logo">Brand logo</a>
+        <a href="{% url 'to_do:index' %}" class="bbrand-logo">Brand logo</a>
         <ul>
-            <li><a href="#" class="nnav-link">Home</a></li>
+            <li><a href="{% url 'to_do:index' %}" class="nnav-link">Home</a></li>
             <li><a href="#" class="nnav-link">About</a></li>
             <li><a href="{% url 'index' %}" class="nnav-link">Project list</a></li>
         </ul>

@@ -17,23 +17,25 @@
     <!-- nav-bar -->
     {% block content %}
     <div class="container"> 
-        <h1 style="text-align: center;">{{user.username}}</h1>
+        <h1 style="text-align: center;">Welcome, {{user.username}}</h1>
         <table class="table table-striped">
             <thead>
               <tr>
-                <th scope="col">#</th>
+                <!-- <th scope="col">#</th> -->
                 <th scope="col">Items</th>
                 <th scope="col">status</th>
                 <th scope="col">Edit</th>
+                <th scope="col">Remove Task</th>
               </tr>
             </thead>
             <tbody>
                 {% for i in todo_list %}
               <tr>
-                <th scope="row">{{i.id}}</th>
+                <!-- <th scope="row">{{cnt}}</th> -->
                 <td>{{i.title}}</td>
                 <td>{{i.status}}</td>
-                <td><a href="#">Edit</a></td>
+                <td><a href="{% url 'to_do:edit' i.id %}">Edit</a></td>
+                <td><a href="{% url 'to_do:remove' i.id %}">Remove</a></td>
               </tr>
               {% endfor %}
             </tbody>

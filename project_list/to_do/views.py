@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Task
 from django.contrib.auth.forms import UserCreationForm
 from .forms import TaskForm
@@ -25,7 +25,7 @@ def add_task(request):
         form = TaskForm(request.POST)
         if form.is_valid():
             form.save()
-            return render(request, 'to_do/index.html')
+            return redirect('to_do:index')
         
     else:
         form = TaskForm()
@@ -41,8 +41,13 @@ def edit(request,id):
         form = TaskForm(request.POST, instance=task)
         if form.is_valid():
             form.save()
-            return render(request, 'to_do/index.html')
+            return redirect('to_do:index')
         
     else:
         form = TaskForm(instance=task)
     return render(request, 'to_do/edit.html', {'form':form})
+
+def remove(request, id):
+    to_be_remove=Task.objects.get(id=id)
+    to_be_remove.delete()
+    return redirect('to_do:index')
