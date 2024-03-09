@@ -1,0 +1,5 @@
+# steps taken to create the app.
+
+1. Created the to_do subapp.
+2. Checking if the template inside the to_do is working or not.
+3. Creating model(Task) for our to_do list  

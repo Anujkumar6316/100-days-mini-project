@@ -1,0 +1,8 @@
+{% extends 'to_do/base.html' %}
+
+{% block content %}
+<h1>Details for {{ to_do.title }}</h1>
+<h2>{{to_do.desc}}</h2>
+<h3>{{to_do.status}}</h3>
+<h4>{{to_do.created}}</h4>
+{% endblock %}
